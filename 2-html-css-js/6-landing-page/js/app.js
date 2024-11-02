@@ -57,3 +57,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+ // Script para alterar a URL do vídeo no modal dinamicamente
+ document.querySelectorAll('.open-modal').forEach(button => {
+    button.addEventListener('click', function() {
+        const videoSrc = this.getAttribute('data-video');
+        document.getElementById('trailerVideo').src = videoSrc;
+    });
+});
+
+// Pause o vídeo quando o modal for fechado
+document.getElementById('trailerModal').addEventListener('hide.bs.modal', function () {
+    document.getElementById('trailerVideo').src = '';
+});
