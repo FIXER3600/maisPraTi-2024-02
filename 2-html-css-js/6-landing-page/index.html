@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <title>Gaming Website Landing Page</title>
     <!-- Define o título da página que aparece na aba do navegador -->
@@ -21,46 +21,61 @@
 
 <body >
     <!-- Início do corpo da página -->
-    <header>
-        <!-- Cabeçalho da página -->
-        <a href="" class="logo">
-            <!-- Link com a classe 'logo', utilizado para branding -->
-            <img src="images/nintendo-switch.png" alt="nintendo switch logo" height="240" width="240" />
-            <!-- Exibe o logotipo do Nintendo Switch com altura e largura definidos -->
+    <header class="d-flex justify-content-between align-items-center p-3">
+        <!-- Logo Section -->
+        <a href="#" class="logo">
+            <img src="images/nintendo-switch.png" alt="nintendo switch logo">
         </a>
-        <nav>
-            <!-- Seção de navegação do site -->
+        
+        <!-- Navigation Drawer Button -->
+    <nav class="navbar toggle-button" id="nav-toggle-button">  
+        <button class="btn btn-outline-light d-lg-none "   type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <i class="fas fa-bars"></i>
+        </button>
+   </nav>
+        <!-- Navigation Links for Large Screens -->
+        <nav class="d-none d-md-block" >
             <ul class="nav">
-                <!-- Lista de itens de navegação -->
-                <li>
-                    <a href="https://www.nintendo.com/us/whatsnew/" target="_blank">Switch News</a>
-                    <!-- Link para notícias do Nintendo Switch, abre em nova aba -->
-                </li>
-                <li>
-                    <a href="https://www.nintendo.com/pt-br/switch/online/" target="_blank">Switch Online</a>
-                    <!-- Link para o serviço online do Switch, abre em nova aba -->
-                </li>
-                <li>
-                    <a href="https://www.nintendo.com/us/switch/online/nintendo-switch-online/classic-games/" target="_blank">Switch Classic</a>
-                    <!-- Link para os jogos clássicos do Nintendo Switch, abre em nova aba -->
-                </li>
+                <li><a href="https://www.nintendo.com/us/whatsnew/" target="_blank">Switch News</a></li>
+                <li><a href="https://www.nintendo.com/pt-br/switch/online/" target="_blank">Switch Online</a></li>
+                <li><a href="https://www.nintendo.com/us/switch/online/nintendo-switch-online/classic-games/" target="_blank">Switch Classic</a></li>
             </ul>
         </nav>
-
-        <div class="login">
-            <!-- Div que contém o botão de login e um campo de texto -->
-            <button>Login</button>
-            <!-- Botão para login -->
-            <input type="text" name="login" id="" placeholder="Login"/>
-            <!-- Campo de texto para possível entrada de dados de login -->
-        </div>
-
-        <div class="search">
-            <!-- Div para a barra de pesquisa -->
-            <input type="text" id="gameInput" placeholder="Search"/>
-            <!-- Campo de texto para a pesquisa de jogos -->
+        
+        <!-- Login and Search Section -->
+        <div class="d-flex align-items-center" id="login-search-div">
+            <div class="login me-3 d-none d-md-flex">
+                <input type="text" name="login" placeholder="Login">
+                <button>Login</button>
+            </div>
+            <div class="search d-none d-md-flex">
+                <input type="text" id="gameInput" placeholder="Search">
+            </div>
         </div>
     </header>
+    
+
+<!-- Offcanvas (Drawer) Menu for Mobile -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" data-bs-theme="dark" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="https://www.nintendo.com/us/whatsnew/" target="_blank">Switch News</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://www.nintendo.com/pt-br/switch/online/" target="_blank">Switch Online</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://www.nintendo.com/us/switch/online/nintendo-switch-online/classic-games/" target="_blank">Switch Classic</a></li>
+            <li class="nav-item mt-3">
+                <input type="text" name="login" placeholder="Login" class="form-control mb-2">
+                <button class="btn btn-primary w-100">Login</button>
+            </li>
+            <li class="nav-item mt-3">
+                <input type="text" id="gameInput" placeholder="Search" class="form-control">
+            </li>
+        </ul>
+    </div>
+</div>
 
     <div class="swiper">
         <!-- Contêiner principal do Swiper, o carrossel -->
@@ -341,6 +356,6 @@
     <script src="js/app.js"></script>
     <!-- Script externo para a lógica JavaScript personalizada -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
