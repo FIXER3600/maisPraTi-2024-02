@@ -143,7 +143,6 @@ header {
     background: rgba(0, 0, 0, 0.6);
 }
 /* Adiciona uma camada semitransparente preta sobre cada slide. */
-
 .swiper .swiper-wrapper .swiper-slide img {
     display: block;
     width: 100%;
@@ -363,7 +362,7 @@ header {
    display: flex;
 
 }
-.titles img{
+#logo-image{
     
     width: 270px;
     height: 200px;
@@ -460,12 +459,7 @@ header {
 #nav-toggle-button{
     display: none;
 }
-@media (max-width:550px) {
-    .banner{
-        display: flex;
-        flex-direction: column;
-    }
-}
+
 @media (max-width:768px) {
 
     .toggle-button{
@@ -489,7 +483,36 @@ header {
         top: 40%;
         left:50%;
     }
-    .description{
+   
+}
+@media (max-width:768px){
+    .banner{
+        display: flex;
+        flex-direction: column;
+    }
+    .features{
+        flex-direction: column;
+    }
+    #character-background {
         display: none;
+    }
+    .swiper .swiper-wrapper .swiper-slide .banner img {
+        position: absolute;
+        width: 270px;
+        height: 200px;
+        z-index: 1;
+        top: 43%;
+        left: 50%;
+    }
+    .trailer{
+        margin-top: 40%;
+    }
+    #logo-image{
+    
+        width: 270px;
+        height: 200px;
+        position: absolute;
+        top: 43%;
+        left: 50%;
     }
 }
